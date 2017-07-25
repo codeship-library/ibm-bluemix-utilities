@@ -1,0 +1,19 @@
+base:
+  build:
+    image: codeship/ibm-bluemix-base
+    path: ./base
+    dockerfile_path: Dockerfile
+dockercfg_generator:
+  build:
+    image: codeship/ibm-bluemix-dockercfg-generator
+    path: ./dockercfg-generator
+    dockerfile_path: Dockerfile
+dockercfg_test:
+  build:
+    image: registry.ng.bluemix.net/codeship/codeship-testing
+    path: ./dockercfg-generator
+    dockerfile_path: Dockerfile.test
+dockercfg_test_generator:
+  image: codeship/ibm-bluemix-dockercfg-generator
+  add_docker: true
+  encrypted_env_file: bluemix.env.encrypted
