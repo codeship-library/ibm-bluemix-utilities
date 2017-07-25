@@ -7,3 +7,12 @@
   image_name: registry.ng.bluemix.net/codeship/codeship-testing
   registry: registry.ng.bluemix.net
   dockercfg_service: dockercfg_test_generator
+- name: Deploy (to Docker Hub)
+  type: serial
+  steps:
+    - name: Push dockercfg Generator
+      service: dockercfg_generator
+      tag: master
+      type: push
+      image_name: codeship/ibm-bluemix-dockercfg-generator
+      encrypted_dockercfg_path: dockercfg.encrypted
