@@ -1,0 +1,9 @@
+- name: Build Base Image
+  service: base
+  command: true
+- name: Test dockercfg Generator
+  service: dockercfg_test
+  type: push
+  image_name: registry.ng.bluemix.net/codeship/codeship-testing
+  registry: registry.ng.bluemix.net
+  dockercfg_service: dockercfg_test_generator
