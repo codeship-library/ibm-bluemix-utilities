@@ -1,5 +1,5 @@
 FROM ubuntu:xenial
-LABEL maintainer='Codeship Inc <maintainers@codeship.com>'
+LABEL maintainer='Codeship Inc., <maintainers@codeship.com>'
 
 ARG IBM_BLUEMIX_VERSION='0.5.5'
 

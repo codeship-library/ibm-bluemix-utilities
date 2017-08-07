@@ -1,5 +1,5 @@
 FROM codeship/ibm-bluemix-base:latest
-LABEL maintainer='Codeship Inc <maintainers@codeship.com>'
+LABEL maintainer='Codeship Inc., <maintainers@codeship.com>'
 
 RUN \
   apt-get update && \
