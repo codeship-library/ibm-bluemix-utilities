@@ -7,7 +7,7 @@
 - name: Test dockercfg Generator
   service: dockercfg_test
   type: push
-  image_name: registry.ng.bluemix.net/codeship/codeship-testing
+  image_name: registry.ng.bluemix.net/bluemix_utilities/codeship-testing
   registry: registry.ng.bluemix.net
   dockercfg_service: dockercfg_test_generator
 - name: Deploy (to Docker Hub)

@@ -12,7 +12,7 @@ dockercfg_generator:
   encrypted_env_file: bluemix.env.encrypted
 dockercfg_test:
   build:
-    image: registry.ng.bluemix.net/codeship/codeship-testing
+    image: registry.ng.bluemix.net/bluemix_utilities/codeship-testing
     path: ./dockercfg-generator
     dockerfile_path: Dockerfile.test
 dockercfg_test_generator:
