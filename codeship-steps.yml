@@ -1,6 +1,9 @@
 - name: Build Base Image
   service: base
   command: true
+- name: Build the dockercfg Generator
+  service: dockercfg_generator
+  command: true
 - name: Test dockercfg Generator
   service: dockercfg_test
   type: push

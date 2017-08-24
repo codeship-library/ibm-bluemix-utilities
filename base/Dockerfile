@@ -1,7 +1,8 @@
 FROM ubuntu:xenial
-LABEL maintainer='Codeship Inc <maintainers@codeship.com>'
+LABEL maintainer='Codeship Inc., <maintainers@codeship.com>'
 
-ARG IBM_BLUEMIX_VERSION='0.5.5'
+# see https://public.dhe.ibm.com/cloud/bluemix/cli/bluemix-cli/
+ARG IBM_BLUEMIX_VERSION='0.5.6'
 
 RUN \
   apt-get update && \
