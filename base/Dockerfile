@@ -2,7 +2,7 @@ FROM ubuntu:xenial
 LABEL maintainer='Codeship Inc., <maintainers@codeship.com>'
 
 # see https://public.dhe.ibm.com/cloud/bluemix/cli/bluemix-cli/
-ARG IBM_BLUEMIX_VERSION='0.5.5'
+ARG IBM_BLUEMIX_VERSION='0.5.6'
 
 RUN \
   apt-get update && \
