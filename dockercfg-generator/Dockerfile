@@ -13,13 +13,7 @@ RUN \
   docker --version && \
   rm -rf /var/lib/apt/lists/*
 
-RUN \
-  bluemix plugin install container-registry -r Bluemix && \
-  bluemix plugin install container-service -r Bluemix
-
 COPY bluemix_docker_creds.sh /bin
-
-RUN \
-  chmod u+x /bin/bluemix_docker_creds.sh
+RUN chmod u+x /bin/bluemix_docker_creds.sh
 
 ENTRYPOINT ["bluemix_docker_creds.sh"]

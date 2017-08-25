@@ -16,3 +16,7 @@ RUN \
   rm -rf /var/lib/apt/lists/* && \
   bluemix config --usage-stats-collect false && \
   bluemix --version
+
+RUN \
+  bluemix plugin install container-registry -r Bluemix && \
+  bluemix plugin install container-service -r Bluemix
