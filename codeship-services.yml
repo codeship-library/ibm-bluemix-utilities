@@ -12,10 +12,24 @@ dockercfg_generator:
   encrypted_env_file: bluemix.env.encrypted
 dockercfg_test:
   build:
-    image: registry.ng.bluemix.net/codeship/codeship-testing
+    image: registry.ng.bluemix.net/bluemix_utilities/codeship-testing
     path: ./dockercfg-generator
     dockerfile_path: Dockerfile.test
 dockercfg_test_generator:
   image: codeship/ibm-bluemix-dockercfg-generator
   add_docker: true
   encrypted_env_file: bluemix.env.encrypted
+deployment:
+  build:
+    image: codeship/ibm-bluemix-deployment
+    path: ./deployment
+    dockerfile_path: Dockerfile
+  environment:
+    - BLUEMIX_API_ENDPOINT=https://api.ng.bluemix.net
+    - BLUEMIX_CONTAINER_SERVICE_HOST=https://us-south.containers.bluemix.net
+    - BLUEMIX_CONTAINER_SERVICE_CLUSTER_NAME=codeship-testing
+    - BLUEMIX_ORGANIZATION=bluemix-utilities
+    - BLUEMIX_SPACE=production
+  encrypted_env_file: bluemix.env.encrypted
+  volumes:
+    - ./deployment/tests:/tests
