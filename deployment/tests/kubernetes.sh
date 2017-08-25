@@ -10,11 +10,14 @@ bluemix login \
   -o "${BLUEMIX_ORGANIZATION}" \
   -s "${BLUEMIX_SPACE}"
 
-bluemix cs init --host "${BLUEMIX_CONTAINER_SERVICE_HOST}"
+bluemix cs init \
+  --host "${BLUEMIX_CONTAINER_SERVICE_HOST}"
 
 # Get the required configuration for `kubectl` from Bluemix and load it
-bluemix cs cluster-config --export "${BLUEMIX_CONTAINER_SERVICE_CLUSTER_NAME}" > .kubeconfig
-source .kubeconfig && rm -rf .kubeconfig
+bluemix cs cluster-config \
+  --export "${BLUEMIX_CONTAINER_SERVICE_CLUSTER_NAME}" \
+  > .kubectl_config
+source .kubectl_config && rm -rf .kubectl_config
 
 # run the commands required to deploy the application via `kubectl`
 kubectl version
