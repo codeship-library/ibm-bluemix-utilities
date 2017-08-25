@@ -4,18 +4,37 @@
 - name: Build the dockercfg Generator
   service: dockercfg_generator
   command: true
-- name: Test dockercfg Generator
-  service: dockercfg_test
-  type: push
-  image_name: registry.ng.bluemix.net/bluemix_utilities/codeship-testing
-  registry: registry.ng.bluemix.net
-  dockercfg_service: dockercfg_test_generator
+- name: Build the deployment container
+  service: deployment
+  command: true
+- name: Test
+  type: parallel
+  steps:
+    - name: Test Deployment
+      service: deployment
+      type: serial
+      steps:
+        - name: CloudFoundry CLI
+          command: /tests/cloudfoundry.sh
+        - name: Kubernetes CLI
+          command: /tests/kubernetes.sh
+    - name: Test dockercfg Generator
+      service: dockercfg_test
+      type: push
+      image_name: registry.ng.bluemix.net/bluemix_utilities/codeship-testing
+      registry: registry.ng.bluemix.net
+      dockercfg_service: dockercfg_test_generator
 - name: Deploy (to Docker Hub)
+  tag: master
   type: serial
   steps:
+    - name: Push Deployment
+      service: deployment
+      type: push
+      image_name: codeship/ibm-bluemix-deployment
+      encrypted_dockercfg_path: dockercfg.encrypted
     - name: Push dockercfg Generator
       service: dockercfg_generator
-      tag: master
       type: push
       image_name: codeship/ibm-bluemix-dockercfg-generator
       encrypted_dockercfg_path: dockercfg.encrypted

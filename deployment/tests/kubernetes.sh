@@ -1,0 +1,21 @@
+#!/bin/bash
+
+set -e
+
+# login to IBM Bluemix via credentials provided via (encrypted) environment
+# variables
+bluemix login \
+  --apikey "${BLUEMIX_API_KEY}" \
+  -a "${BLUEMIX_API_ENDPOINT}" \
+  -o "${BLUEMIX_ORGANIZATION}" \
+  -s "${BLUEMIX_SPACE}"
+
+bluemix cs init --host "${BLUEMIX_CONTAINER_SERVICE_HOST}"
+
+# Get the required configuration for `kubectl` from Bluemix and load it
+bluemix cs cluster-config --export "${BLUEMIX_CONTAINER_SERVICE_CLUSTER_NAME}" > .kubeconfig
+source .kubeconfig && rm -rf .kubeconfig
+
+# run the commands required to deploy the application via `kubectl`
+kubectl version
+kubectl cluster-info
