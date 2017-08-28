@@ -7,6 +7,7 @@ set -e
 bluemix login \
   --apikey "${BLUEMIX_API_KEY}" \
   -a "${BLUEMIX_API_ENDPOINT}" \
+  -o "${BLUEMIX_ORGANIZATION}" \
   -s "${BLUEMIX_SPACE}"
 
 bluemix cs init \
