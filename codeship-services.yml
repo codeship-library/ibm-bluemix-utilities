@@ -27,7 +27,7 @@ deployment:
   environment:
     - BLUEMIX_API_ENDPOINT=https://api.ng.bluemix.net
     - BLUEMIX_CONTAINER_SERVICE_HOST=https://us-south.containers.bluemix.net
-    - BLUEMIX_CONTAINER_SERVICE_CLUSTER_NAME=codeship-testing
+    - BLUEMIX_CONTAINER_SERVICE_CLUSTER_NAME=codeship-kubectl-testing
     - BLUEMIX_ORGANIZATION=bluemix-utilities
     - BLUEMIX_SPACE=production
   encrypted_env_file: bluemix.env.encrypted
