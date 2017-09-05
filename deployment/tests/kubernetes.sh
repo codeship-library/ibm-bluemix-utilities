@@ -6,9 +6,7 @@ set -e
 # variables
 bluemix login \
   --apikey "${BLUEMIX_API_KEY}" \
-  -a "${BLUEMIX_API_ENDPOINT}" \
-  -o "${BLUEMIX_ORGANIZATION}" \
-  -s "${BLUEMIX_SPACE}"
+  -a "${BLUEMIX_API_ENDPOINT}"
 
 bluemix cs init \
   --host "${BLUEMIX_CONTAINER_SERVICE_HOST}"
