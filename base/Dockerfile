@@ -15,6 +15,7 @@ RUN \
   rm -rf Bluemix_CLI bluemix.tar.gz && \
   rm -rf /var/lib/apt/lists/* && \
   bluemix config --usage-stats-collect false && \
+  bluemix config --check-version false && \
   bluemix --version
 
 RUN \
