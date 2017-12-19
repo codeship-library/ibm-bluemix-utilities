@@ -1,8 +1,8 @@
-# IBM Bluemix Utilities
+# IBM Cloud Utilities
 
 ## Deployment Container
 
-This is a generic deployment container with the IBM Bluemix CLI, the CloudFoundry CLI (via the `bluemix cf` wrapper) and hte Kubernetes CLI (`kubectl`) installed.
+This is a generic deployment container with the IBM Cloud CLI, the CloudFoundry CLI (via the `bluemix cf` wrapper) and hte Kubernetes CLI (`kubectl`) installed.
 
 Please see the [cloudfoundry.sh](deployment/tests/cloudfoundry.sh) and [kubernetes.sh](deployment/tests/kubernetes.sh) sample script as starting points for your own deployment scripts.
 
@@ -10,9 +10,9 @@ The image is available via the [codeship/ibm-bluemix-deployment](https://hub.doc
 
 ## `dockercfg` Generator
 
-Codeship supports using custom images to generate dockercfg files during the build process. To use this image to integrate with IBM Bluemix Registry, simply define an entry in your services file for this image, and reference it from any steps or services which need to interact with the Bluemix Registry repositories with the `dockercfg_service` field. You'll also need to provide the following environment variables using an [encrypted env file](https://codeship.com/documentation/docker/encryption/):
+Codeship supports using custom images to generate dockercfg files during the build process. To use this image to integrate with IBM Cloud Registry, simply define an entry in your services file for this image, and reference it from any steps or services which need to interact with the Bluemix Registry repositories with the `dockercfg_service` field. You'll also need to provide the following environment variables using an [encrypted env file](https://codeship.com/documentation/docker/encryption/):
 
-* BLUEMIX_API_KEY - Your Bluemix API key
+* BLUEMIX_API_KEY - Your IBM Cloud API key
 
 Optionally, you can also set the following variables to assume a role across accounts before generating the dockercfg:
 

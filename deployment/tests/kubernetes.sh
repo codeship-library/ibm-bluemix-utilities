@@ -2,7 +2,7 @@
 
 set -e
 
-# login to IBM Bluemix via credentials provided via (encrypted) environment
+# login to IBM Cloud via credentials provided via (encrypted) environment
 # variables
 bluemix login \
   --apikey "${BLUEMIX_API_KEY}" \
