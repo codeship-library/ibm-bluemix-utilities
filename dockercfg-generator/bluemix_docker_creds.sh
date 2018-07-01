@@ -11,7 +11,7 @@ bx login --apikey "${BLUEMIX_API_KEY}" -a "${BLUEMIX_API_ENDPOINT}"
 #bluemix cs init
 bx cr login
 bx cr namespace-list
-
+bx cr namespaces
 # writing aws docker creds to desired path
 echo "Writing Docker creds to $1"
 chmod 544 ~/.docker/config.json
