@@ -19,4 +19,5 @@ RUN \
 
 RUN \
   bluemix plugin install container-registry -r Bluemix && \
-  bluemix plugin install container-service -r Bluemix
+  bluemix plugin install container-service -r Bluemix && \
+  bluemix config --check-version false
