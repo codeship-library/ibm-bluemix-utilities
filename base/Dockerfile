@@ -18,11 +18,10 @@ RUN \
   ( cd Bluemix_CLI && ./install_bluemix_cli ) && \
   rm -rf Bluemix_CLI bluemix.tar.gz && \
   rm -rf /var/lib/apt/lists/* && \
-  bluemix config --usage-stats-collect false && \
-  bluemix config --check-version false && \
-  bluemix --version
+  ibmcloud config --usage-stats-collect false && \
+  ibmcloud config --check-version false && \
+  ibmcloud --version
 
 RUN \
-  bluemix plugin install container-registry -r Bluemix && \
-  bluemix plugin install container-service -r Bluemix && \
-  bluemix config --check-version false
+  ibmcloud plugin install container-registry -r Bluemix && \
+  ibmcloud plugin install container-service -r Bluemix

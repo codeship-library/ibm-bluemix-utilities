@@ -2,9 +2,9 @@
 
 ## Deployment Container
 
-This is a generic deployment container with the IBM Cloud CLI, the CloudFoundry CLI (via the `bluemix cf` wrapper) and hte Kubernetes CLI (`kubectl`) installed.
+This is a generic deployment container with the IBM Cloud CLI, the CloudFoundry CLI (via the `ibmcloud cf` wrapper) and the Kubernetes CLI (`kubectl`) installed.
 
-Please see the [cloudfoundry.sh](deployment/tests/cloudfoundry.sh) and [kubernetes.sh](deployment/tests/kubernetes.sh) sample script as starting points for your own deployment scripts.
+Please see the [cloudfoundry.sh](deployment/tests/cloudfoundry.sh) and [kubernetes.sh](deployment/tests/kubernetes.sh) sample scripts as starting points for your own deployment scripts.
 
 The image is available via the [codeship/ibm-bluemix-deployment](https://hub.docker.com/r/codeship/ibm-bluemix-deployment/) repository on Docker Hub.
 
