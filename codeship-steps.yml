@@ -2,7 +2,7 @@
   service: base
   command: true
 - name: Build the dockercfg Generator
-  service: dockercfg_generator
+  service: dockercfg-generator
   command: true
 - name: Build the deployment container
   service: deployment
@@ -19,11 +19,11 @@
         - name: Kubernetes CLI
           command: /tests/kubernetes.sh
     - name: Test dockercfg Generator
-      service: dockercfg_test
+      service: dockercfg-test
       type: push
       image_name: registry.ng.bluemix.net/bluemix_utilities/codeship-testing
       registry: registry.ng.bluemix.net
-      dockercfg_service: dockercfg_generator
+      dockercfg_service: dockercfg-generator
 - name: Deploy (to Docker Hub)
   tag: master
   type: serial
@@ -34,7 +34,7 @@
       image_name: codeship/ibm-bluemix-deployment
       encrypted_dockercfg_path: dockercfg.encrypted
     - name: Push dockercfg Generator
-      service: dockercfg_generator
+      service: dockercfg-generator
       type: push
       image_name: codeship/ibm-bluemix-dockercfg-generator
       encrypted_dockercfg_path: dockercfg.encrypted
