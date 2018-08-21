@@ -9,8 +9,8 @@ RUN \
   apt-get clean -y && \
   rm -rf /var/lib/apt/lists/*
 
-# see https://clis.ng.bluemix.net/ui/home.html
-ARG IBM_CLOUD_VERSION='0.6.7'
+# https://public.dhe.ibm.com/cloud/bluemix/cli/bluemix-cli
+ARG IBM_CLOUD_VERSION='0.8.0'
 
 RUN \
   curl "https://public.dhe.ibm.com/cloud/bluemix/cli/bluemix-cli/${IBM_CLOUD_VERSION}/IBM_Cloud_CLI_${IBM_CLOUD_VERSION}_amd64.tar.gz" > bluemix.tar.gz && \
