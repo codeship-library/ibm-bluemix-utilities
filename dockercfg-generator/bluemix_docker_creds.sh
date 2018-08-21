@@ -6,7 +6,7 @@ set -e
 : "${BLUEMIX_API_ENDPOINT:=api.ng.bluemix.net}"
 
 # Logging into IBM Bluemix
-echo "Logging into IBM Bluemix"
+echo "Logging into IBM Cloud"
 bluemix login --apikey "${BLUEMIX_API_KEY}" -a "${BLUEMIX_API_ENDPOINT}"
 bluemix cs init
 bluemix cr login
