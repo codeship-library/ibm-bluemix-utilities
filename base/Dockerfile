@@ -10,7 +10,7 @@ RUN \
   rm -rf /var/lib/apt/lists/*
 
 # https://public.dhe.ibm.com/cloud/bluemix/cli/bluemix-cli
-ARG IBM_CLOUD_VERSION='0.10.1'
+ARG IBM_CLOUD_VERSION='0.12.1'
 
 RUN \
   curl "https://public.dhe.ibm.com/cloud/bluemix/cli/bluemix-cli/${IBM_CLOUD_VERSION}/IBM_Cloud_CLI_${IBM_CLOUD_VERSION}_amd64.tar.gz" > bluemix.tar.gz && \
