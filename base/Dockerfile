@@ -1,4 +1,4 @@
-FROM ubuntu:xenial
+FROM ubuntu:bionic
 LABEL maintainer='Codeship Inc., <maintainers@codeship.com>'
 
 RUN \
